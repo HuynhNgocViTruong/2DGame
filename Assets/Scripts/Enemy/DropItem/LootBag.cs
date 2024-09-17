@@ -6,6 +6,7 @@ public class LootBag : MonoBehaviour
 {
     public GameObject ItemPrefab;
     public List<Loot> lootLists = new List<Loot>();
+
     #region Drop many item
     private List<Loot> GetDropItems()
     {
@@ -35,6 +36,8 @@ public class LootBag : MonoBehaviour
                 Vector3 randomness = new Vector3(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
                 GameObject lootGameObject = Instantiate(ItemPrefab, spawnPosition + randomness, Quaternion.identity);
                 lootGameObject.GetComponent<SpriteRenderer>().sprite = item.lootSprite;
+                lootGameObject.GetComponent<LootInform>().LootTag = item.lootTag;
+                lootGameObject.GetComponent<LootInform>().LootName = item.lootName;
             }
         }
     }

@@ -11,7 +11,6 @@ public class ColliderEvent_Sender : MonoBehaviour {
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-
         if (other.gameObject.tag == "Enemy")
         {
             enemy = other.gameObject.transform.GetComponent<Enemy>();
