@@ -88,6 +88,7 @@ public class Enemy : MonoBehaviour, IDamable, IMoveable, ITriggerCheck
         if (IsWithinStrikingDistance)
         {
             //Giảm máu player trong này
+            player.GetComponent<CharacterController_2D>().hp -= 10;
         }
     }
 

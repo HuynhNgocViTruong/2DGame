@@ -11,6 +11,8 @@ public class CharacterController_2D : MonoBehaviour {
     private float h = 0;
     private float v = 0;
 
+    
+    public float hp = 100;
     public float MoveSpeed = 40;
 
     public SpriteRenderer[] m_SpriteGroup;
@@ -54,6 +56,7 @@ public class CharacterController_2D : MonoBehaviour {
             return;*/
 
         Move_Fuc();
+        isDead();
     }
 
     public int sortingOrder = 0;
@@ -127,5 +130,13 @@ public class CharacterController_2D : MonoBehaviour {
         theScale.x *= -1;
 
         m_tran.localScale = theScale;
+    }
+
+    private void isDead()
+    {
+        if(hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
